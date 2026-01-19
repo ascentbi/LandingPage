@@ -90,6 +90,28 @@
 
         }
 
+        .portfolio-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This ensures the image fills the area without distortion */
+        object-position: center; /* Keeps the top of the dashboard visible if cropped */
+        }
+
+        .portfolio-img-container {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 1.5rem; /* Slightly tighter corners for the inner image */
+    background: #f8fafc;
+    padding: 1.25rem; /* This makes the image itself look smaller within the card */
+    }
+
+    .portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Changed from cover to contain to ensure the whole dashboard is visible */
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); /* Adds a subtle lift to the dashboard */
+    }
 
 
         /* Portfolio Swiper Custom Styles */
@@ -98,7 +120,7 @@
 
         .swiper-slide-active { opacity: 1; scale: 1; filter: blur(0px); }
 
-        .portfolio-prev, .portfolio-next { cursor: pointer; transition: all o.3s; z-index: 10; }
+        .portfolio-prev, .portfolio-next { cursor: pointer; transition: all 0.3s; z-index: 10; }
 
         .portfolio-prev:hover, .portfolio-next:hover { color: #2563eb; transform: scale(1.1); }
 
@@ -123,7 +145,7 @@
                 <a href="#plans" class="hover:text-blue-600 transition-colors">Plans</a>
                 <a href="#contact" class="hover:text-blue-600 transition-colors">Contacts</a>
             </div>
-
+           
             <a href="#faq" class="bg-slate-900 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-600 transition-all transform hover:scale-105 flex items-center gap-2">
                 <i data-lucide="help-circle" class="w-4 h-4"></i>
                 Common Questions
@@ -238,7 +260,7 @@
                   <div class="relative z-10 w-full aspect-square bg-slate-100 rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl group">
     <img src="/assets/Presenting.jpg" alt="Duarte Imperadeiro" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
     
-    <div class="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl shadow-lg border border-white/20">
+    <div class="absolute bottom-10 left-8 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl shadow-lg border border-white/20">
         <p class="text-[10px] uppercase tracking-widest font-bold text-blue-600 leading-none mb-1">Expert</p>
         <p class="text-base font-extrabold text-slate-900 leading-tight">Duarte Imperadeiro</p>
     </div>
@@ -405,138 +427,66 @@
 
 
     <section id="portfolio" class="py-32 px-6 bg-white overflow-hidden">
-
-        <div class="max-w-7xl mx-auto">
-
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-
-                <div class="max-w-2xl">
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Interactive Showcase</h2>
-
-                    <p class="text-slate-500 text-lg font-medium">Drag left or right to explore some demo dashboards.</p>
-
-                </div>
-
-                <div class="flex gap-4">
-
-                    <div class="portfolio-prev p-4 rounded-full border border-slate-200 hover:bg-slate-50 shadow-sm">
-
-                        <i data-lucide="arrow-left" class="w-6 h-6"></i>
-
-                    </div>
-
-                    <div class="portfolio-next p-4 rounded-full border border-slate-200 hover:bg-slate-50 shadow-sm">
-
-                        <i data-lucide="arrow-right" class="w-6 h-6"></i>
-
-                    </div>
-
-                </div>
-
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Examples of Dashboards</h2>
+                <p class="text-slate-500 text-lg font-medium">Drag left or right to explore some demo dashboards.</p>
             </div>
-
-
-
-            <div class="swiper portfolioSwiper overflow-visible">
-
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide cursor-grab active:cursor-grabbing">
-
-                        <div class="bg-slate-50 rounded-[2.5rem] border border-slate-100 p-4 shadow-sm">
-
-                            <div class="aspect-[16/10] bg-slate-200 rounded-[2rem] flex items-center justify-center text-slate-400 italic mb-6">
-
-                                [Revenue Analysis Dashboard]
-
-                            </div>
-
-                            <div class="px-4 pb-4">
-
-                                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Fintech</span>
-
-                                <h4 class="text-xl font-bold mt-1">Global Sales Pipeline</h4>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-slide cursor-grab active:cursor-grabbing">
-
-                        <div class="bg-slate-50 rounded-[2.5rem] border border-slate-100 p-4 shadow-sm">
-
-                            <div class="aspect-[16/10] bg-slate-200 rounded-[2rem] flex items-center justify-center text-slate-400 italic mb-6">
-
-                                [Marketing ROI Tracker]
-
-                            </div>
-
-                            <div class="px-4 pb-4">
-
-                                <span class="text-purple-600 font-bold text-xs uppercase tracking-widest">Marketing</span>
-
-                                <h4 class="text-xl font-bold mt-1">Multi-Channel Attribution</h4>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-slide cursor-grab active:cursor-grabbing">
-
-                        <div class="bg-slate-50 rounded-[2.5rem] border border-slate-100 p-4 shadow-sm">
-
-                            <div class="aspect-[16/10] bg-slate-200 rounded-[2rem] flex items-center justify-center text-slate-400 italic mb-6">
-
-                                [Inventory Forecast]
-
-                            </div>
-
-                            <div class="px-4 pb-4">
-
-                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-widest">Logistics</span>
-
-                                <h4 class="text-xl font-bold mt-1">Supply Chain Optimizer</h4>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-slide cursor-grab active:cursor-grabbing">
-
-                        <div class="bg-slate-50 rounded-[2.5rem] border border-slate-100 p-4 shadow-sm">
-
-                            <div class="aspect-[16/10] bg-slate-200 rounded-[2rem] flex items-center justify-center text-slate-400 italic mb-6">
-
-                                [HR Analytics]
-
-                            </div>
-
-                            <div class="px-4 pb-4">
-
-                                <span class="text-amber-600 font-bold text-xs uppercase tracking-widest">Corporate</span>
-
-                                <h4 class="text-xl font-bold mt-1">Retention Scorecard</h4>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
+            <div class="flex gap-4">
+                <div class="portfolio-prev p-4 rounded-full border border-slate-200 hover:bg-slate-50 shadow-sm">
+                    <i data-lucide="arrow-left" class="w-6 h-6"></i>
                 </div>
-
+                <div class="portfolio-next p-4 rounded-full border border-slate-200 hover:bg-slate-50 shadow-sm">
+                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                </div>
             </div>
-
         </div>
 
-    </section>
+        <div class="swiper portfolioSwiper overflow-visible">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide cursor-grab active:cursor-grabbing">
+                    <div class="bg-slate-50 rounded-[2.5rem] border border-slate-100 p-4 shadow-sm">
+                        <div class="aspect-[16/10] overflow-hidden rounded-[2rem] bg-slate-200 mb-6">
+                            <img src="/assets/Sales.png" alt="Revenue Analysis" class="portfolio-img">
+                        </div>
+                        <div class="px-4 pb-4">
+                            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Fintech</span>
+                            <h4 class="text-xl font-bold mt-1">Global Sales</h4>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide cursor-grab active:cursor-grabbing">
+                    <div class="bg-slate-50 rounded-[2.5rem] border border-slate-100 p-4 shadow-sm">
+                        <div class="aspect-[16/10] overflow-hidden rounded-[2rem] bg-slate-200 mb-6">
+                            <img src="/assets/Retail.png" alt="Inventory Forecast" class="portfolio-img">
+                        </div>
+                        <div class="px-4 pb-4">
+                            <span class="text-emerald-600 font-bold text-xs uppercase tracking-widest">Logistics</span>
+                            <h4 class="text-xl font-bold mt-1">Retail Store</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide cursor-grab active:cursor-grabbing">
+                    <div class="bg-slate-50 rounded-[2.5rem] border border-slate-100 p-4 shadow-sm">
+                        <div class="aspect-[16/10] overflow-hidden rounded-[2rem] bg-slate-200 mb-6">
+                            <img src="/assets/HR.png" alt="HR Analytics" class="portfolio-img">
+                        </div>
+                        <div class="px-4 pb-4">
+                            <span class="text-amber-600 font-bold text-xs uppercase tracking-widest">Corporate</span>
+                            <h4 class="text-xl font-bold mt-1">HR Analytics</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -854,7 +804,7 @@
 
     centeredSlides: true,
 
-    loop: true,
+    loop: false,
 
     grabCursor: true,
 
